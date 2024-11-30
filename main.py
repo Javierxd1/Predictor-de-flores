@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import numpy as np
@@ -11,6 +12,14 @@ model = joblib.load('model/model.pkl')
 app = FastAPI()
 
 #Definición del modelo de requerimiento de los datos (De acuerdo con los datos de entrenamiento)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permitir solicitudes desde cualquier origen
+    allow_credentials=True,
+    allow_methods=["*"],  # Permitir todos los métodos HTTP
+    allow_headers=["*"],  # Permitir todos los encabezados
+)
 
 class PredictedRequest(BaseModel):
     sepal_length:float
