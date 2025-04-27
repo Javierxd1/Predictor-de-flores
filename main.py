@@ -36,7 +36,7 @@ async def Predictor(request:PredictedRequest):
                       request.petal_width
                       ]])
     prediction = model.predict(data)
-    species_map = {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
+    species_map = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
     return {"prediction": species_map[int(prediction[0])]}
 
 
