@@ -68,4 +68,4 @@ Y responde con un objeto JSON con la predicción de la especie:
 ## Imagen de la interfaz
 Aquí tienes una imagen del frontend de la aplicación
 
-![Interfaz del Frontend](images\Frontend.png)
+![Interfaz del Frontend](/images/Frontend.png)
